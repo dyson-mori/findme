@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+import { AdvancedMarker } from "@vis.gl/react-google-maps";
+
+export const Container = styled(AdvancedMarker)`
   position: relative;
 
   display: flex;
@@ -27,4 +29,20 @@ export const Container = styled.div`
 
     transform: rotate(45deg);
   };
+  
+  .moving-item {
+    position: absolute;
+
+    width: 100%;
+    padding: 5px;
+
+    top: -30px;
+    transition: transform 0.3s ease-in-out;
+
+    border-radius: 3px;
+    
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: #fff;
+  };
+
 `;

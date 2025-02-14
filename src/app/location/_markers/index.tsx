@@ -6,13 +6,19 @@ import Image from "next/image";
 import { MarkerClusterer, Marker } from "@googlemaps/markerclusterer";
 import { useMap, AdvancedMarker } from "@vis.gl/react-google-maps";
 
-import { LocationProps } from "..";
+import { Tree } from "..";
 
 import { Container } from "./styles";
 
-const Markers = ({ location }: LocationProps) => {
+type Props = {
+  location: Tree[];
+};
+
+const Markers = ({ location }: Props) => {
   const map = useMap();
   const clusterer = useRef<MarkerClusterer | null>(null);
+
+  // const [open, setOpen] = useState();
   const route = useRouter();
 
   const [markers, setMarkers] = useState<{ [key: string]: Marker }>({});
@@ -44,25 +50,40 @@ const Markers = ({ location }: LocationProps) => {
     });
   };
 
-  function handleSelect(selected: string) {
-    // route.push(`/maps/${selected}`);
+  function handleSelect(selected: Tree) {
+    map?.panTo({ lat: selected.lat, lng: selected.lng }); // Move suavemente até o marcador
+    map?.setZoom(18); // Aproxima o mapa
+  };
+
+  function handleButton(item: string) {
+    route.push(`/${item}`)
   };
 
   return (
     <>
       {location.map((point) => (
-        <AdvancedMarker ref={marker => setMarkerRef(marker, point.key)} position={point} key={point.key} onClick={() => handleSelect(point.name)}>
-          <Container>
-            <Image
-              src={point.files[0]}
-              width={100}
-              height={150}
-              alt={point.name}
-              style={{ objectFit: 'cover', borderRadius: 6, zIndex: 1 }}
-            />
-            <span />
-          </Container>
-        </AdvancedMarker>
+        <Container
+          ref={marker => setMarkerRef(marker, point.key)}
+          position={point}
+          key={point.key}
+          onClick={() => handleSelect(point)}
+        >
+          <button className="moving-item" onClick={e => {
+            e.preventDefault();
+            e.stopPropagation();
+            handleButton(point.id);
+          }}>
+            Visualizar
+          </button>
+          <Image
+            src={point.files[0]}
+            width={100}
+            height={150}
+            alt={point.name}
+            style={{ objectFit: 'cover', borderRadius: 6, zIndex: 1 }}
+          />
+          <span />
+        </Container>
       ))}
     </>
   );

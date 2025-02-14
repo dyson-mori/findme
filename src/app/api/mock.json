@@ -1,0 +1,54 @@
+{
+  "location": [
+    {
+      "id": "0",
+      "name": "test 1",
+      "files": [
+        "https://i.pinimg.com/736x/73/62/78/7362786e455bc79b4e88df8cfe5e0546.jpg"
+      ],
+      "lat": -19.9419361,
+      "lng": -44.0342196,
+      "partnership": []
+    },
+    {
+      "id": "1",
+      "name": "test 2",
+      "files": [
+        "https://i.pinimg.com/736x/8a/f9/8e/8af98eb37b6f9ed1a0ded63e328be90e.jpg"
+      ],
+      "lat": -19.942774,
+      "lng": -44.031124,
+      "partnership": []
+    },
+    {
+      "id": "2",
+      "name": "test 3",
+      "files": [
+        "https://i.pinimg.com/736x/73/e8/e5/73e8e55a630d33a19b8d3880af4b5fbe.jpg"
+      ],
+      "lat": -19.943607,
+      "lng": -44.029033,
+      "partnership": []
+    },
+    {
+      "id": "3",
+      "name": "test 4",
+      "files": [
+        "https://i.pinimg.com/736x/47/58/cc/4758cc1bd8f673c9dc5e0f9923eb7c95.jpg"
+      ],
+      "lat": -19.942412,
+      "lng": -44.027447,
+      "partnership": []
+    },
+    {
+      "id": "4",
+      "name": "test 5",
+      "files": [
+        "https://i.pinimg.com/736x/4d/90/24/4d9024fda27be67b292135a14e32634e.jpg"
+      ],
+      "lat": -19.938665,
+      "lng": -44.030024,
+      "partnership": []
+    }
+  ]
+}

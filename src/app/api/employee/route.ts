@@ -4,10 +4,17 @@ import { NextRequest, NextResponse } from "next/server";
 
 // import { prisma } from "@services";
 
+import { location } from '../mock.json';
+
 export async function GET(request: NextRequest) {
+  const url = new URL(request.url);
+  const search = url.searchParams.get("id");
+
+  const loc = location.find(el => el.id === search);
+
   // const data = await prisma.employee.findMany();
 
-  // return NextResponse.json(data, { status: 200, statusText: 'done' });
+  return NextResponse.json(loc, { status: 200, statusText: 'done' });
 };
 
 export async function POST(request: NextRequest) {
