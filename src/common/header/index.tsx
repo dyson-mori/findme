@@ -5,6 +5,8 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useTheme } from 'styled-components';
 
+import { User } from '@svg';
+
 import { Container, Logo as LogoStyled, Nav } from './styles';
 
 // import Users from './creator';
@@ -16,14 +18,14 @@ const links = [
     path: '/',
     name: 'Maps'
   },
-  {
-    path: '/videos',
-    name: 'Videos'
-  },
-  {
-    path: '/posts',
-    name: 'Posts'
-  },
+  // {
+  //   path: '/videos',
+  //   name: 'Videos'
+  // },
+  // {
+  //   path: '/posts',
+  //   name: 'Posts'
+  // },
   // {
   //   path: '/category',
   //   name: 'Categories'
@@ -68,6 +70,10 @@ export const Header: FC<Props> = ({ }) => {
             ))
           }
         </Nav>
+
+        <Link href={{ pathname: '/auth' }}>
+          <User width={20} height={20} strokeWidth={1.8} />
+        </Link>
 
         {/* <Users users={users} />
         <Settings /> */}

@@ -3,6 +3,8 @@ import styled, { css } from "styled-components";
 export const Container = styled.header`
   display: flex;
 
+  align-items: center;
+
   height: 50px;
 
   padding: 0 25px;
@@ -12,10 +14,20 @@ export const Container = styled.header`
   ${({ theme }) => css`
     background-color: ${theme.header.background};
     box-shadow: ${theme.header.box_shadow};
+
+    svg {
+      stroke: ${theme.colors.primary};
+    }
   `};
 
   @media only screen and (max-width: 600px) {
     padding: 0 10px;
+  };
+
+  a {
+    padding: 10px;
+    font-size: 13px;
+    text-decoration: none;
   };
 `;
 
@@ -43,13 +55,6 @@ export const Nav = styled.nav`
   height: 50px;
 
   width: 100%;
-
-  a {
-    padding: 10px;
-    font-size: 13px;
-    text-decoration: none;
-  };
-  
 
   @media only screen and (max-width: 600px) {
     a {
