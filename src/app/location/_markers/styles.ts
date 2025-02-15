@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import { AdvancedMarker } from "@vis.gl/react-google-maps";
 
@@ -43,6 +43,15 @@ export const Container = styled(AdvancedMarker)`
     
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     background-color: #fff;
+
+    transition: .1s;
   };
 
+  .moving-item:hover {
+    ${({ theme }) => css`
+      background-color: ${theme.colors.primary};
+      color: ${theme.colors.white};
+      font-weight: 600;
+    `}
+  }
 `;
