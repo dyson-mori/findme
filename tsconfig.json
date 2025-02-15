@@ -19,17 +19,20 @@
       }
     ],
     "paths": {
-      "@/*": [
-        "./src/*"
-      ],
       "@services": [
         "./src/services"
+      ],
+      "@common": [
+        "./src/common"
       ],
       "@utils": [
         "./src/utils"
       ],
       "@global/*": [
         "./src/global/*"
+      ],
+      "@svg": [
+        "./src/assets"
       ],
     }
   },
