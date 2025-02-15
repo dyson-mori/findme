@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { Map } from '@vis.gl/react-google-maps';
 
-import { Header } from '@/common';
+import { Header } from '@common';
 
 import Markers from './_markers';
 
